@@ -24,7 +24,6 @@ body{
 }
 img{
     max-width: 100%;
-    width: 100%;
 }
 
 .container{
@@ -82,9 +81,9 @@ button:hover{
 }
 .banner{
     margin-top: 100px;
-    max-width: 300px;
     text-align: center;
     margin-top: 70px;
+    display: inline-block;
 }
 .banner h1{
     margin: 20px 15px 0 0 ;
@@ -93,6 +92,7 @@ button:hover{
 .banner p{
     margin-top: 10px;
     line-height: 20px;
+    width: 400px;
     color:var(---green-d)
 }
 .banner__buttom{
@@ -129,6 +129,7 @@ button:hover{
     justify-content: space-between;
     align-items: center;
     margin: 50px 0;
+    gap: 30px;
 }
 .things__item h3{
     font-size: 25px;
@@ -286,7 +287,151 @@ footer .adress{
     color: white;
     text-decoration: none;
 }
+.navbar__links.navbar__open{
+    transform: translateX(0);
+    opacity: 1;
 
+}
+
+footer .container{
+    background-color:rgb(89 116 84);
+    
+}
+.social__icons{
+    display: flex;
+    justify-content: center;
+    gap:100px;
+    padding: 60px 0;
+}
+.social__icons li{
+list-style: none;
+}
+.social__icons li a:hover{
+    color: var(---yellow-d);
+}
+
+
+@media (max-width: 1000px){
+    .banner{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-content: center;
+        align-items: center;
+    }
+    .banner__socials  {
+        grid-column: 2/3;
+        margin-bottom: 50px;  
+        font-size: 40px;
+        padding: 0 100px;
+    }
+    .navbar{
+        position: relative;
+    }
+    .navbar__icons{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80px;
+        height: 80px;
+        cursor: pointer;
+        transition: all .3s ease-in;
+        right: 0;
+        top:0;
+        position: fixed;
+    }
+    .navbar__icon{
+        width: 50px;
+        height: 7px;
+        background-color:var(---white);
+        border-radius: 4px;
+    }
+    .navbar__icon::before,
+    .navbar__icon::after{
+        content: '';
+        width: 50px;
+        height: 7px;
+        background-color: var(---white);
+        position: absolute;
+        border-radius: 4px;
+    }
+    .navbar__icon::before{
+        top: 25px;
+    
+    }
+    .navbar__icon::after{
+        bottom: 25px;
+    }
+    .navbar__links{
+        display: inline;
+        background-color:rgb(89 116 84);
+        position: fixed;
+        top:0;
+        left: 0;
+        width: 50%;
+        height: 100%;
+        z-index: 5;
+        transition: var(--smooth);
+        transform: translateX(-100%);
+        opacity: 0;
+        
+    }
+    .navbar__link{
+        list-style: none;
+        margin: 50px;
+    }
+    .navbar__link a{
+        color: white;
+        text-decoration: none;
+    
+    }
+    .navbar__link a:hover{
+        color: var(--green);
+    }
+    .navbar__button{
+        text-align: center;
+        color: white;
+        background-color: var(---blue-l);
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+        transition: all .3s ease-in;
+        margin: 50px;
+    }
+    button:hover{
+        background-color:var(---green-d);
+    }
+}
+@media (max-width :720px){
+    .banner{
+        display: flex;
+        flex-direction: column;
+    }
+    .things__item{
+        display: grid;
+        grid-template-columns:1fr 1fr;
+    }
+    .things__item img{
+        width: 100%;
+    }
+    .banner__socials{
+        gap:20px
+    }
+    .things__item{
+        display: grid;
+        grid-template-columns:1fr;
+    }
+    .things__item img{
+        width: 100%;
+    }
+    .things__item .reverse{
+        grid-row: 2/3;
+    }
+    .project__items{
+        display: grid;
+        grid-template-columns:1fr;
+        gap: 20px;
+    }
+}
 
 
 
